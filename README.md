@@ -41,7 +41,7 @@ docker-compose up -d
 
 This will start the container in detached mode.
 
-### Add the exporter to Prometheus
+### Add exporter to Prometheus
 Open you Prometheus config file `/etc/prometheus/prometheus.yaml` and add a new job. It should look similar to this:
 ```
 scrape_configs:
@@ -65,7 +65,7 @@ scrape_configs:
     - localhost:2112
 ```
 
-### Import the Dashboard to Grafana
+### Import dashboard to Grafana
 Perform the following steps in Grafana, to import the dashboard:
 1. Click on "Dashboards"
 2. Click on "New"
