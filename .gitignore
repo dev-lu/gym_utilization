@@ -1,0 +1,33 @@
+# Go specific
+# Compiled Object files, Static and Dynamic libs (Shared Objects)
+*.o
+*.a
+*.so
+
+# Go executables
+*.exe
+*.exe~
+*.test
+
+# Go test coverage profile files
+*.cover
+
+# Go generated files
+*.gen.go
+
+# Dependency directories
+/vendor/
+/go.sum
+
+# macOS specific
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Thumbnails
+._*
+
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
+.fseventsd
