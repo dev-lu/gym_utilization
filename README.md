@@ -1,6 +1,8 @@
 # Prometheus exporter for gym utilization
 
 This is a prometheus exporter, that exports the current utilization of your local gym in percent. At the moment only McFit is supported.
+![mcfit_util](https://github.com/dev-lu/gym_utilization/assets/44299200/ce1fbfb0-d26f-452a-9d2f-93d92450144f)
+
 
 ## How to run:
 Before you can use the exporter, you have to find out the studio code of you local McFIT. One way to do it, is to login to you McFIT account and open the developer tools of your browser. Then search for "/nox/public/v1/studios/" in the network tab and you should see a GET request with your studio code.
