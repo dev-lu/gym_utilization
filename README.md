@@ -1,7 +1,8 @@
 # Prometheus exporter for gym utilization
 
 This is a prometheus exporter, that exports the current utilization of your local gym in percent. At the moment only McFit is supported.
-![mcfit_util](https://github.com/dev-lu/gym_utilization/assets/44299200/ce1fbfb0-d26f-452a-9d2f-93d92450144f)
+
+![gym_util_browser](https://github.com/dev-lu/gym_utilization/assets/44299200/8cc907b0-fc9f-4e79-905b-d3816196f50b)
 
 
 ## How to run:
