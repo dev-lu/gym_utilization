@@ -38,10 +38,14 @@ func getGymData() {
 
 	resp, err := http.DefaultClient.Do(req)
 	if err != nil {
-		log.Println("Error while doing request: ", err)
+		log.Fatalf("Error while doing request: %v", err)
 	}
 
-	defer resp.Body.Close()
+	defer func() {
+		if err := resp.Body.Close(); err != nil {
+			log.Printf("Error while closing response body: %v", err)
+		}
+	}()
 	body, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
 		log.Println("Error while reading response body: ", err)
@@ -50,7 +54,7 @@ func getGymData() {
 	var data []ResponseItem
 
 	if err := json.Unmarshal(body, &data); err != nil {
-		log.Println("Error while unmarshaling JSON: ", err)
+		log.Printf("Error while unmarshaling JSON: %v\nResponse body: %s", err, body)
 	}
 
 	var percentage int
@@ -83,7 +87,7 @@ func main() {
 	viper.SetConfigFile("config.yaml")
 	err := viper.ReadInConfig()
 	if err != nil {
-		panic(fmt.Errorf("Could not read config file: %w", err))
+		log.Fatalf("Could not read config file: %v", err)
 	}
 
 	prometheus.MustRegister(percentageMetric)
